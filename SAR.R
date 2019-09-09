@@ -1,0 +1,11 @@
+library(mmSAR)
+SAR <- read.csv2("C:/Users/eranee/Desktop/Beetles/SAR.csv", row.names=1)
+a <- as.numeric(SAR[,1])
+s <- as.numeric(SAR[,2])
+data <- data.frame(a,s)
+name <- "Species Area Relationships"
+SARl <- as.list(c(name,data.frame(data)))
+data.SARn <- as.list(SARn,all.names=F,sorted=F,name,all.names=F,sorted=F)
+data(SARl)
+data(expo)
+res <- rssoptim(expo,SARl)
