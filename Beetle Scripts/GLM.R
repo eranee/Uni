@@ -5,6 +5,7 @@ library(BiodiversityR)
 library(modEvA)
 GLM <- read.csv2("C:/Users/eranee/Desktop/Beetles/GLM.csv", row.names=1)
 GLM <- GLM[,-9]
+GLM$OFxP <- NULL
 #GLM <- data.frame(scale(GLM))
 
 options(na.action="na.fail")
@@ -25,6 +26,7 @@ sMS
 MS
 glm1 <- glm(Species ~ Ann..Precip. + Area + Dist..Clos..Main. + Others.Forest + 1,family = poisson(link="log"), data=GLM,x=TRUE)
 glm2 <- glm(Species ~ Ann..Precip. + Area + Dist..Clos..Main. + OFxP + 1,family = poisson(link="log"), data=GLM,x=TRUE)
+Dsquared(model= glm1)
 deviancepercentage(glm1,GLM,test="Chisq", digits=5)
 deviancepercentage(glm2,GLM,test="Chisq", digits=5)
 write.xlsx(MS, "models.xlsx",sheetName="Models")

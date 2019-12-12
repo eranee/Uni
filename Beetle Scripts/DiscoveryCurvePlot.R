@@ -9,7 +9,8 @@ points(Chios_f[[4]],Chios_f[[3]],type="p",pch=23, bg="#B66F34", col="#B66F34")
 points(Chios_curve[["ci.poly"]],type="l",lty=6,lwd=2, col="#B66F34")
 
 Crete_f <- Crete_curve[["f.stats"]]
-plot(Crete_curve[["rarefact.line"]],xlim=c(50,5000),ylim=c(1,250),type="l",lwd=2,col="#afeeee",xlab="",ylab="",main="Crete")
+plot(Crete_curve[["rarefact.line"]],xlim=c(50,5000),ylim=c(1,250),
+     type="l",lwd=2,col="#afeeee",xlab="",ylab="",main="Crete")
 #points(Crete_curve[["rarefact.line"]],type="l",lwd=2,col="#afeeee")
 points(Crete_curve[["extrap.line"]],type="l",lty=2,lwd=2,col="#afeeee")
 points(Crete_f[[4]],Crete_f[[3]],type="p",pch=23, bg="#afeeee", col="#afeeee")
