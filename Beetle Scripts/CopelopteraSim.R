@@ -3,8 +3,8 @@ library(betapart)
 ColeopDist <- read.csv("C:/Users/eranee/Desktop/Beetles/PCA_Species.csv", row.names=1, sep=";")
 
 
-ColeopDist <- ColeopDist[1:941]
-ColeopDist <- ColeopDist[1:11,] 
+ColeopDist <- ColeopDist[1:nrow(ColeopDIst)]
+ColeopDist <- ColeopDist[1:12,] 
 ColeopDist <- ColeopDist[-9,]
 #ColeopDist<- ColeopDist[,as.logical(colSums(ColeopDist != 0)) ]
 betapart <-beta.multi(ColeopDist, index.family="sorensen")

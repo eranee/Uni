@@ -1,5 +1,6 @@
-library(tidyverse)
-library(stringr)
+require(tidyverse)
+require(stringr)
+require(svMisc)
 
 ### Preparing R for the script, importing data ###
 oldw <- getOption("warn")
@@ -13,6 +14,7 @@ STDLine <- data.frame()
 ### Preparing data for plotting ###
 for (i in seq_along(temp)){
   ### Defining data ###
+  progress(i,progress.bar=TRUE)
   x <- get(temp[i])
   y <- deparse(temp[i])
   Location <- str_remove(y,"_curve")
